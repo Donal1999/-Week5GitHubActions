@@ -32,4 +32,13 @@ public class PassengerServiceTest {
         service.create(p);
         assertThrows(IllegalArgumentException.class, () -> service.create(p2));
     }
+    @Test
+    void deletePassenger(){
+        Passenger p = new Passenger("id1","Adam", "adam@atu.ie");
+        service.create(p); //create an instance of passenger
+
+        boolean deleted = service.delete("id1");
+        assertTrue(deleted);
+        assertFalse(service.findById("id1").isPresent());
+    }
 }
