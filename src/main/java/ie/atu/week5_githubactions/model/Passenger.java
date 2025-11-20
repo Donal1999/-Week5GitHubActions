@@ -22,6 +22,12 @@ public class Passenger {
     @NotBlank @Email
     private String email;
 
+    public Passenger(String passengerId, String name, String email) {
+        this.passengerId = passengerId;
+        this.name = name;
+        this.email = email;
+    }
+
     public @NotBlank @Size(max = 40) String getPassengerId() {
         return passengerId;
     }
@@ -45,4 +51,5 @@ public class Passenger {
     public void setEmail(@NotBlank @Email String email) {
         this.email = email;
     }
+
 }
